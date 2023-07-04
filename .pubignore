@@ -39,3 +39,6 @@ coverage/
 /macos/
 /windows/
 /web/
+
+# .pubignore specific
+examples/
