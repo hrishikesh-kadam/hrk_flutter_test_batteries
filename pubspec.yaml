@@ -4,6 +4,10 @@ version: 0.1.0-pre.1
 description: >-
   A library to accumulate required flutter test helper and utility codes
 repository: https://github.com/hrishikesh-kadam/hrk_flutter_test_batteries
+topics:
+  - batteries
+  - flutter-batteries
+  - flutter-test-batteries
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
