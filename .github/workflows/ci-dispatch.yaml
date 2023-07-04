@@ -1,0 +1,45 @@
+name: ci-dispatch
+
+on:
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: 'Runner OS'
+        required: true
+        default: 'ubuntu-latest'
+        type: choice
+        options:
+          - 'ubuntu-latest'
+          - 'macos-latest'
+          - 'windows-latest'
+          - 'macos-13'
+      ref:
+        description: 'Flutter channel, version or git reference'
+        required: true
+        default: 'stable'
+        type: choice
+        options:
+          - 'stable'
+          - 'beta'
+          - 'master'
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  ci-dispatch:
+    name: CI Dispatched on ${{ inputs.runner }} using Flutter ${{ inputs.ref }}
+    runs-on: ${{ inputs.runner }}
+
+    steps:
+      - uses: hrishikesh-kadam/setup-flutter@v1
+        with:
+          ref: ${{ inputs.ref }}
+      - uses: actions/checkout@v3
+      - run: ./tool/prerequisite.sh
+      - run: ./tool/ci.sh
+      - uses: codecov/codecov-action@v3
+        with:
+          files: coverage/lcov.info
+          name: ci-dispatch-${{ inputs.runner }}-${{ inputs.ref }}
