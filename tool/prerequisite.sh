@@ -55,7 +55,7 @@ if [[ ! -x $(command -v lcov) ]]; then
   lcov --version
 fi
 
-if [[ $(uname -s) =~ ^"Linux" ]]; then
-  # https://docs.flutter.dev/get-started/install/linux#additional-linux-requirements
-  sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
-fi
+# if [[ $(uname -s) =~ ^"Linux" ]]; then
+#   # https://docs.flutter.dev/get-started/install/linux#additional-linux-requirements
+#   sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+# fi
