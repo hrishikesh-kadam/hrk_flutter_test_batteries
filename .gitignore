@@ -31,3 +31,11 @@ migrate_working_dir/
 .packages
 build/
 coverage/
+
+# Platform folders
+android/
+ios/
+linux/
+macos/
+windows/
+web/
