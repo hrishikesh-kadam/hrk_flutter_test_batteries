@@ -10,3 +10,5 @@ linter:
 analyzer:
   errors:
     todo: ignore
+  exclude:
+    - 'examples'
