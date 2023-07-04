@@ -4,7 +4,7 @@ set -e -o pipefail
 
 dart pub global activate coverage
 
-flutter test --coverage --coverage-path coverage/lcov.info
+flutter test --coverage
 lcov --list coverage/lcov.info
 
 pushd examples/counter &> /dev/null
