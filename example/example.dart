@@ -1,23 +1,3 @@
-[![ci](https://github.com/hrishikesh-kadam/hrk_flutter_test_batteries/actions/workflows/ci.yaml/badge.svg)](https://github.com/hrishikesh-kadam/hrk_flutter_test_batteries/actions/workflows/ci.yaml)
-[![codecov](https://codecov.io/gh/hrishikesh-kadam/hrk_flutter_test_batteries/branch/main/graph/badge.svg)](https://codecov.io/gh/hrishikesh-kadam/hrk_flutter_test_batteries)
-
-A library to accumulate required flutter test helper and utility codes
-
-## Features
-
-- `getTestType()`
-- `simulateAndroidBackButton(tester)`
-- `verifySystemNavigatorPop(tester)`
-
-## Getting started
-
-```console
-flutter pub add dev:hrk_flutter_test_batteries
-```
-
-## Usage
-
-```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hrk_flutter_test_batteries/hrk_flutter_test_batteries.dart';
 
@@ -42,5 +22,3 @@ void main() {
     // To verify pressing back button, leaves the app
   });
 }
-
-```
