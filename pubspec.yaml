@@ -1,5 +1,5 @@
 name: hrk_flutter_test_batteries
-version: 0.1.0-pre.1
+version: 0.1.0-pre.2
 
 description: >-
   A library to accumulate required flutter test helper and utility codes
@@ -23,6 +23,7 @@ dependencies:
 
 dev_dependencies:
   flutter_lints: ^2.0.0
+  hrk_analysis: ^0.1.0-pre.1
 
 flutter:
   uses-material-design: true
