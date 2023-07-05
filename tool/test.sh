@@ -17,6 +17,6 @@ elif [[ $(uname -s) =~ ^"MINGW" ]]; then
   OS_NAME="windows"
 fi
 if [[ -n $OS_NAME ]]; then
-  flutter test -d "$OS_NAME" integration_test
+  xvfb-run flutter test -d "$OS_NAME" integration_test
 fi
 popd &> /dev/null
