@@ -1,5 +1,6 @@
 [![ci](https://github.com/hrishikesh-kadam/hrk_flutter_test_batteries/actions/workflows/ci.yaml/badge.svg)](https://github.com/hrishikesh-kadam/hrk_flutter_test_batteries/actions/workflows/ci.yaml)
 [![codecov](https://codecov.io/gh/hrishikesh-kadam/hrk_flutter_test_batteries/branch/main/graph/badge.svg)](https://codecov.io/gh/hrishikesh-kadam/hrk_flutter_test_batteries)
+[![pub package](https://img.shields.io/pub/v/hrk_flutter_test_batteries.svg)](https://pub.dev/packages/hrk_flutter_test_batteries)
 
 A library to accumulate required flutter test helper and utility codes
 
