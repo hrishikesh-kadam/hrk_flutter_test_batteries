@@ -1,3 +1,7 @@
+## 0.1.0
+
+- Promote v0.1.0-pre.3 to v0.1.0
+
 ## 0.1.0-pre.3
 
 - Remove flutter_lints
