@@ -7,4 +7,5 @@ Future<void> simulateAndroidBackButton(WidgetTester tester) async {
       const JSONMethodCodec().encodeMethodCall(const MethodCall('popRoute'));
   await tester.binding.defaultBinaryMessenger
       .handlePlatformMessage('flutter/navigation', message, (_) {});
+  await tester.pumpAndSettle();
 }

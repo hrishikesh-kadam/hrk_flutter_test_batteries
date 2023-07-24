@@ -1,3 +1,7 @@
+## 0.3.0
+
+- Add `pumpAndSettle()` to `simulateAndroidBackButton()`
+
 ## 0.2.0
 
 - Add tapBackButton()
