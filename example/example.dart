@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hrk_flutter_test_batteries/hrk_flutter_test_batteries.dart';
 
@@ -20,5 +21,14 @@ void main() {
     // await pumpApp(tester);
     await verifySystemNavigatorPop(tester);
     // To verify pressing back button, leaves the app
+  });
+
+  testWidgets('tester.getOverflowingRenderFlexList()', (tester) async {
+    disableOverflowError();
+    tester.view.physicalSize = Size(280, tester.view.physicalSize.height);
+    addTearDown(() => tester.view.resetPhysicalSize());
+    // await tester.pumpWidget(widget under test);
+    final overflowingRenderFlexList = tester.getOverflowingRenderFlexList();
+    expect(overflowingRenderFlexList.length, 0);
   });
 }

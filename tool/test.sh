@@ -8,6 +8,7 @@ flutter test --coverage
 lcov --list coverage/lcov.info
 
 pushd examples/counter &> /dev/null
+flutter pub get
 if [[ $(uname -s) =~ ^"Linux" ]]; then
   OS_NAME="linux"
   if [[ $GITHUB_ACTIONS ]]; then

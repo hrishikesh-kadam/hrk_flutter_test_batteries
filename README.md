@@ -6,9 +6,11 @@ A library to accumulate required flutter test helper and utility codes
 
 ## Features
 
-- `getTestType()`
-- `simulateAndroidBackButton(tester)`
-- `verifySystemNavigatorPop(tester)`
+- [`getTestType()`][]
+- [`simulateAndroidBackButton(tester)`][]
+- [`verifySystemNavigatorPop(tester)`][]
+- [`disableOverflowError()`][]
+- [`tester.getOverflowingRenderFlexList()`][]
 
 ## Getting started
 
@@ -19,6 +21,7 @@ flutter pub add dev:hrk_flutter_test_batteries
 ## Usage
 
 ```dart
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hrk_flutter_test_batteries/hrk_flutter_test_batteries.dart';
 
@@ -42,6 +45,21 @@ void main() {
     await verifySystemNavigatorPop(tester);
     // To verify pressing back button, leaves the app
   });
-}
 
+  testWidgets('tester.getOverflowingRenderFlexList()', (tester) async {
+    disableOverflowError();
+    tester.view.physicalSize = Size(280, tester.view.physicalSize.height);
+    addTearDown(() => tester.view.resetPhysicalSize());
+    // await tester.pumpWidget(widget under test);
+    final overflowingRenderFlexList = tester.getOverflowingRenderFlexList();
+    expect(overflowingRenderFlexList.length, 0);
+  });
+}
 ```
+
+
+[`getTestType()`]: lib/src/test_type.dart
+[`simulateAndroidBackButton(tester)`]: lib/src/navigation/simulate_android_back_button.dart
+[`verifySystemNavigatorPop(tester)`]: lib/src/navigation/verify_system_navigator_pop.dart
+[`disableOverflowError()`]: lib/src/error/disable_overflow_error.dart
+[`tester.getOverflowingRenderFlexList()`]: lib/src/extension/widget_tester.dart

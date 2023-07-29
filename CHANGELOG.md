@@ -1,3 +1,7 @@
+## 0.4.0
+
+- Add `disableOverflowError()` and `tester.getOverflowingRenderFlexList()`
+
 ## 0.3.0
 
 - Add `pumpAndSettle()` to `simulateAndroidBackButton()`
