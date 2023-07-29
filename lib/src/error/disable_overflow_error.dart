@@ -8,8 +8,8 @@ void disableOverflowError({
   Logger? logger,
   Level? level,
 }) {
-  /// FlutterError.onError != FlutterError.presentError in Widget Test
-  /// See test/error/disable_overflow_error_test.dart
+  // FlutterError.onError != FlutterError.presentError in Widget Test
+  // See test/error/disable_overflow_error_test.dart
   FlutterExceptionHandler? originalOnError = FlutterError.onError;
   FlutterError.onError = (details) {
     bool isOverflowError = false;

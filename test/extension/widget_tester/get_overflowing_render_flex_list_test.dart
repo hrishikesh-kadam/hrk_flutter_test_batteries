@@ -19,7 +19,7 @@ void main() {
 
     // setUpAll(() {
     //   configureHrkLogging();
-    //   libLogger.level = Level.ALL;
+    //   packageLogger.level = Level.ALL;
     // });
 
     testWidgets('1', (tester) async {
