@@ -1,3 +1,7 @@
+## 0.5.0
+
+- Add setPhysicalSize() extension on TestFlutterView
+
 ## 0.4.0
 
 - Add `disableOverflowError()` and `tester.getOverflowingRenderFlexList()`

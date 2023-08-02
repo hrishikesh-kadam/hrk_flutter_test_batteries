@@ -31,4 +31,13 @@ void main() {
     final overflowingRenderFlexList = tester.getOverflowingRenderFlexList();
     expect(overflowingRenderFlexList.length, 0);
   });
+
+  testWidgets('tester.view.setPhysicalSize()', (tester) async {
+    // Saves atleast 3 lines
+    // tester.view.physicalSize = Size(280, tester.view.physicalSize.height);
+    // tester.view.devicePixelRatio = 1.0;
+    // addTearDown(() => tester.view.resetPhysicalSize());
+    // addTearDown(() => tester.view.resetDevicePixelRatio());
+    tester.view.setPhysicalSize(width: 280);
+  });
 }
