@@ -63,6 +63,7 @@ void main() {
       expect(tester.takeException(), isNull);
       // throw FlutterError('Sample FlutterError');
       // TODO(hrishikesh-kadam): Find some code which throw FlutterError()
+      // 1. tester.pumpAndSettle()
       expect(tester.takeException(), isFlutterError);
     });
   });
