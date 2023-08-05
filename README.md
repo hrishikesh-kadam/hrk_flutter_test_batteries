@@ -59,13 +59,13 @@ void main() {
     expect(overflowingRenderFlexList.length, 0);
   });
 
-  testWidgets('tester.view.setPhysicalSize()', (tester) async {
+  testWidgets('tester.view.setLogicalSize()', (tester) async {
     // Saves atleast 3 lines
-    // tester.view.physicalSize = Size(280, tester.view.physicalSize.height);
+    // tester.view.physicalSize = Size(280, 653);
     // tester.view.devicePixelRatio = 1.0;
     // addTearDown(() => tester.view.resetPhysicalSize());
     // addTearDown(() => tester.view.resetDevicePixelRatio());
-    tester.view.setPhysicalSize(width: 280);
+    tester.view.setLogicalSize(width: 280, height: 653);
   });
 }
 ```

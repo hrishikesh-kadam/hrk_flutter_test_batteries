@@ -1,3 +1,7 @@
+## 0.5.1
+
+- Rename `setPhysicalSize()` to `setLogicalSize()`
+
 ## 0.5.0
 
 - Add setPhysicalSize() extension on TestFlutterView
