@@ -1,3 +1,7 @@
+## 0.6.0
+
+- Add `tester.expectNotOverflowing()`
+
 ## 0.5.1
 
 - Rename `setPhysicalSize()` to `setLogicalSize()`

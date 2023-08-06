@@ -32,6 +32,14 @@ void main() {
     expect(overflowingRenderFlexList.length, 0);
   });
 
+  testWidgets('tester.expectNotOverflowing()', (tester) async {
+    disableOverflowError();
+    tester.view.physicalSize = Size(280, tester.view.physicalSize.height);
+    addTearDown(() => tester.view.resetPhysicalSize());
+    // await tester.pumpWidget(widget under test);
+    tester.expectNotOverflowing();
+  });
+
   testWidgets('tester.view.setLogicalSize()', (tester) async {
     // Saves atleast 3 lines
     // tester.view.physicalSize = Size(280, 653);

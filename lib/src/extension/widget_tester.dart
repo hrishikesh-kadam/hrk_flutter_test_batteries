@@ -38,4 +38,17 @@ extension HrkWidgetTester on WidgetTester {
   // - RenderConstraintsTransformBox
   // See:
   // - https://docs.flutter.dev/ui/layout/constraints Example 14
+
+  void expectNotOverflowing({
+    final Finder? of,
+    final bool matchRoot = false,
+    final bool skipOffstage = true,
+  }) {
+    final overflowingRenderFlexList = getOverflowingRenderFlexList(
+      of: of,
+      matchRoot: matchRoot,
+      skipOffstage: skipOffstage,
+    );
+    expect(overflowingRenderFlexList.length, 0);
+  }
 }

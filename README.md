@@ -10,11 +10,14 @@ A library to accumulate required flutter test helper and utility codes
 - [`simulateAndroidBackButton(tester)`][]
 - [`verifySystemNavigatorPop(tester)`][]
 - [`disableOverflowError()`][]
-- [`tester.getOverflowingRenderFlexList()`][]
+- [`WidgetTester` Extenion][]
+  - `tester.getOverflowingRenderFlexList()`
+  - `tester.expectNotOverflowing()`
 
 ## Convenient Helpers
 
-- [`tester.view.setLogicalSize()`][]
+- [`TestFlutterView` Extension][]
+  - `tester.view.setLogicalSize()`
 
 ## Getting started
 
@@ -59,6 +62,14 @@ void main() {
     expect(overflowingRenderFlexList.length, 0);
   });
 
+  testWidgets('tester.expectNotOverflowing()', (tester) async {
+    disableOverflowError();
+    tester.view.physicalSize = Size(280, tester.view.physicalSize.height);
+    addTearDown(() => tester.view.resetPhysicalSize());
+    // await tester.pumpWidget(widget under test);
+    tester.expectNotOverflowing();
+  });
+
   testWidgets('tester.view.setLogicalSize()', (tester) async {
     // Saves atleast 3 lines
     // tester.view.physicalSize = Size(280, 653);
@@ -75,5 +86,5 @@ void main() {
 [`simulateAndroidBackButton(tester)`]: lib/src/navigation/simulate_android_back_button.dart
 [`verifySystemNavigatorPop(tester)`]: lib/src/navigation/verify_system_navigator_pop.dart
 [`disableOverflowError()`]: lib/src/error/disable_overflow_error.dart
-[`tester.getOverflowingRenderFlexList()`]: lib/src/extension/widget_tester.dart
-[`tester.view.setLogicalSize()`]: lib/src/extension/test_flutter_view.dart
+[`WidgetTester` Extenion]: lib/src/extension/widget_tester.dart
+[`TestFlutterView` Extension]: lib/src/extension/test_flutter_view.dart
