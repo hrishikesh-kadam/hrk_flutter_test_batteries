@@ -3,9 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hrk_flutter_test_batteries/hrk_flutter_test_batteries.dart';
 
 void main() {
-  group('getOverflowingRenderFlexList()', () {
-    const overflowingFlexKey = Key('overflowing_flex');
-    final overflowingFlexFinder = find.byKey(overflowingFlexKey);
+  group('getOverflowRenderFlexList()', () {
+    const overflowFlexKey = Key('overflow_flex');
+    final overflowFlexFinder = find.byKey(overflowFlexKey);
 
     // Doesn't work. See test/error/disable_overflow_error_test.dart
     // setUp(() {
@@ -33,8 +33,8 @@ void main() {
           SizedBox(width: 110),
         ],
       ));
-      final overflowingRenderFlexList = tester.getOverflowingRenderFlexList();
-      expect(overflowingRenderFlexList.length, 1);
+      final overflowRenderFlexList = tester.getOverflowRenderFlexList();
+      expect(overflowRenderFlexList.length, 1);
     });
 
     testWidgets('0', (tester) async {
@@ -42,14 +42,14 @@ void main() {
       tester.view.physicalSize = Size(100, tester.view.physicalSize.height);
       addTearDown(() => tester.view.resetPhysicalSize());
       await tester.pumpWidget(const Row(
-        key: overflowingFlexKey,
+        key: overflowFlexKey,
         textDirection: TextDirection.ltr,
         children: <Widget>[
           SizedBox(width: 10),
         ],
       ));
-      final overflowingRenderFlexList = tester.getOverflowingRenderFlexList();
-      expect(overflowingRenderFlexList.length, 0);
+      final overflowRenderFlexList = tester.getOverflowRenderFlexList();
+      expect(overflowRenderFlexList.length, 0);
     });
 
     testWidgets('2', (tester) async {
@@ -72,8 +72,8 @@ void main() {
           ),
         ],
       ));
-      final overflowingRenderFlexList = tester.getOverflowingRenderFlexList();
-      expect(overflowingRenderFlexList.length, 2);
+      final overflowRenderFlexList = tester.getOverflowRenderFlexList();
+      expect(overflowRenderFlexList.length, 2);
     });
 
     testWidgets('of, 2', (tester) async {
@@ -89,7 +89,7 @@ void main() {
             ],
           ),
           Column(
-            key: overflowingFlexKey,
+            key: overflowFlexKey,
             children: [
               Row(
                 textDirection: TextDirection.ltr,
@@ -107,10 +107,10 @@ void main() {
           ),
         ],
       ));
-      final overflowingRenderFlexList = tester.getOverflowingRenderFlexList(
-        of: overflowingFlexFinder,
+      final overflowRenderFlexList = tester.getOverflowRenderFlexList(
+        of: overflowFlexFinder,
       );
-      expect(overflowingRenderFlexList.length, 2);
+      expect(overflowRenderFlexList.length, 2);
     });
 
     testWidgets('of, matchRoot, 1', (tester) async {
@@ -126,7 +126,7 @@ void main() {
             ],
           ),
           Row(
-            key: overflowingFlexKey,
+            key: overflowFlexKey,
             textDirection: TextDirection.ltr,
             children: <Widget>[
               SizedBox(width: 110),
@@ -134,11 +134,11 @@ void main() {
           ),
         ],
       ));
-      final overflowingRenderFlexList = tester.getOverflowingRenderFlexList(
-        of: overflowingFlexFinder,
+      final overflowRenderFlexList = tester.getOverflowRenderFlexList(
+        of: overflowFlexFinder,
         matchRoot: true,
       );
-      expect(overflowingRenderFlexList.length, 1);
+      expect(overflowRenderFlexList.length, 1);
     });
   });
 }

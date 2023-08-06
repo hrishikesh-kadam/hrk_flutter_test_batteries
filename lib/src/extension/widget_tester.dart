@@ -8,7 +8,7 @@ extension HrkWidgetTester on WidgetTester {
   /// See:
   /// 1. https://docs.flutter.dev/tools/devtools/inspector#flex-layouts
   /// 2. https://docs.flutter.dev/testing/common-errors#a-renderflex-overflowed
-  List<RenderFlex> getOverflowingRenderFlexList({
+  List<RenderFlex> getOverflowRenderFlexList({
     final Finder? of,
     final bool matchRoot = false,
     final bool skipOffstage = true,
@@ -25,13 +25,13 @@ extension HrkWidgetTester on WidgetTester {
       );
     }
     final renderFlexList = renderObjectList<RenderFlex>(flexFinder);
-    final overflowingRenderFlexList = <RenderFlex>[];
+    final overflowRenderFlexList = <RenderFlex>[];
     for (final renderFlex in renderFlexList) {
       if (renderFlex.toStringShort().contains('OVERFLOWING')) {
-        overflowingRenderFlexList.add(renderFlex);
+        overflowRenderFlexList.add(renderFlex);
       }
     }
-    return overflowingRenderFlexList;
+    return overflowRenderFlexList;
   }
 
   // TODO(hrishikesh-kadam): Other Overflowing RenderBox:
@@ -39,16 +39,16 @@ extension HrkWidgetTester on WidgetTester {
   // See:
   // - https://docs.flutter.dev/ui/layout/constraints Example 14
 
-  void expectNotOverflowing({
+  void expectNoOverflow({
     final Finder? of,
     final bool matchRoot = false,
     final bool skipOffstage = true,
   }) {
-    final overflowingRenderFlexList = getOverflowingRenderFlexList(
+    final overflowRenderFlexList = getOverflowRenderFlexList(
       of: of,
       matchRoot: matchRoot,
       skipOffstage: skipOffstage,
     );
-    expect(overflowingRenderFlexList.length, 0);
+    expect(overflowRenderFlexList.length, 0);
   }
 }

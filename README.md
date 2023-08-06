@@ -11,8 +11,8 @@ A library to accumulate required flutter test helper and utility codes
 - [`verifySystemNavigatorPop(tester)`][]
 - [`disableOverflowError()`][]
 - [`WidgetTester` Extenion][]
-  - `tester.getOverflowingRenderFlexList()`
-  - `tester.expectNotOverflowing()`
+  - `tester.getOverflowRenderFlexList()`
+  - `tester.expectNoOverflow()`
 
 ## Convenient Helpers
 
@@ -53,21 +53,21 @@ void main() {
     // To verify pressing back button, leaves the app
   });
 
-  testWidgets('tester.getOverflowingRenderFlexList()', (tester) async {
+  testWidgets('tester.getOverflowRenderFlexList()', (tester) async {
     disableOverflowError();
     tester.view.physicalSize = Size(280, tester.view.physicalSize.height);
     addTearDown(() => tester.view.resetPhysicalSize());
     // await tester.pumpWidget(widget under test);
-    final overflowingRenderFlexList = tester.getOverflowingRenderFlexList();
-    expect(overflowingRenderFlexList.length, 0);
+    final overflowRenderFlexList = tester.getOverflowRenderFlexList();
+    expect(overflowRenderFlexList.length, 0);
   });
 
-  testWidgets('tester.expectNotOverflowing()', (tester) async {
+  testWidgets('tester.expectNoOverflow()', (tester) async {
     disableOverflowError();
     tester.view.physicalSize = Size(280, tester.view.physicalSize.height);
     addTearDown(() => tester.view.resetPhysicalSize());
     // await tester.pumpWidget(widget under test);
-    tester.expectNotOverflowing();
+    tester.expectNoOverflow();
   });
 
   testWidgets('tester.view.setLogicalSize()', (tester) async {

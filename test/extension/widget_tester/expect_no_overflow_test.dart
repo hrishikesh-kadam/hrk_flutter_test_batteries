@@ -3,9 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hrk_flutter_test_batteries/hrk_flutter_test_batteries.dart';
 
 void main() {
-  group('tester.expectNotOverflowing()', () {
-    const overflowingFlexKey = Key('overflowing_flex');
-    final overflowingFlexFinder = find.byKey(overflowingFlexKey);
+  group('tester.expectNoOverflow()', () {
+    const overflowFlexKey = Key('overflow_flex');
+    final overflowFlexFinder = find.byKey(overflowFlexKey);
 
     // Doesn't work. See test/error/disable_overflow_error_test.dart
     // setUp(() {
@@ -34,7 +34,7 @@ void main() {
         ],
       ));
       try {
-        tester.expectNotOverflowing();
+        tester.expectNoOverflow();
       } catch (e) {
         expect(e, isInstanceOf<TestFailure>());
       }
@@ -45,13 +45,13 @@ void main() {
       tester.view.physicalSize = Size(100, tester.view.physicalSize.height);
       addTearDown(() => tester.view.resetPhysicalSize());
       await tester.pumpWidget(const Row(
-        key: overflowingFlexKey,
+        key: overflowFlexKey,
         textDirection: TextDirection.ltr,
         children: <Widget>[
           SizedBox(width: 10),
         ],
       ));
-      tester.expectNotOverflowing();
+      tester.expectNoOverflow();
     });
 
     testWidgets('2', (tester) async {
@@ -75,7 +75,7 @@ void main() {
         ],
       ));
       try {
-        tester.expectNotOverflowing();
+        tester.expectNoOverflow();
       } catch (e) {
         expect(e, isInstanceOf<TestFailure>());
       }
@@ -94,7 +94,7 @@ void main() {
             ],
           ),
           Column(
-            key: overflowingFlexKey,
+            key: overflowFlexKey,
             children: [
               Row(
                 textDirection: TextDirection.ltr,
@@ -113,7 +113,7 @@ void main() {
         ],
       ));
       try {
-        tester.expectNotOverflowing(of: overflowingFlexFinder);
+        tester.expectNoOverflow(of: overflowFlexFinder);
       } catch (e) {
         expect(e, isInstanceOf<TestFailure>());
       }
@@ -132,7 +132,7 @@ void main() {
             ],
           ),
           Row(
-            key: overflowingFlexKey,
+            key: overflowFlexKey,
             textDirection: TextDirection.ltr,
             children: <Widget>[
               SizedBox(width: 110),
@@ -141,8 +141,8 @@ void main() {
         ],
       ));
       try {
-        tester.expectNotOverflowing(
-          of: overflowingFlexFinder,
+        tester.expectNoOverflow(
+          of: overflowFlexFinder,
           matchRoot: true,
         );
       } catch (e) {

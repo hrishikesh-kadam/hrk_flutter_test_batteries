@@ -1,3 +1,7 @@
+## 0.6.1
+
+- Rename overflowing to overflow
+
 ## 0.6.0
 
 - Add `tester.expectNotOverflowing()`
