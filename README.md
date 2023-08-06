@@ -14,7 +14,7 @@ A library to accumulate required flutter test helper and utility codes
 
 ## Convenient Helpers
 
-- [`tester.view.setPhysicalSize()`][]
+- [`tester.view.setLogicalSize()`][]
 
 ## Getting started
 
@@ -76,4 +76,4 @@ void main() {
 [`verifySystemNavigatorPop(tester)`]: lib/src/navigation/verify_system_navigator_pop.dart
 [`disableOverflowError()`]: lib/src/error/disable_overflow_error.dart
 [`tester.getOverflowingRenderFlexList()`]: lib/src/extension/widget_tester.dart
-[`tester.view.setPhysicalSize()`]: lib/src/extension/test_flutter_view.dart
+[`tester.view.setLogicalSize()`]: lib/src/extension/test_flutter_view.dart
