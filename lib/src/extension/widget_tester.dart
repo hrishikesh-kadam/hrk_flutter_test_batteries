@@ -4,7 +4,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 extension HrkWidgetTester on WidgetTester {
   /// Returns the overflowing RenderFlex list of descendant Finder.
+  ///
   /// RenderFlex is the RenderObject of the Flex widgets like Row and Column.
+  ///
   /// See:
   /// 1. https://docs.flutter.dev/tools/devtools/inspector#flex-layouts
   /// 2. https://docs.flutter.dev/testing/common-errors#a-renderflex-overflowed
