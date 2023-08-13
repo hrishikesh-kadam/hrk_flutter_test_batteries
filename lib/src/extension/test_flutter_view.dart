@@ -15,4 +15,11 @@ extension HrkTestFlutterView on TestFlutterView {
     addTearDown(() => resetPhysicalSize());
     addTearDown(() => resetDevicePixelRatio());
   }
+
+  Size getLogicalSize() {
+    return Size(
+      physicalSize.width / devicePixelRatio,
+      physicalSize.height / devicePixelRatio,
+    );
+  }
 }

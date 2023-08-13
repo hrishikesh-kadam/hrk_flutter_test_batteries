@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hrk_flutter_test_batteries/hrk_flutter_test_batteries.dart';
 
 void main() {
-  group('TestFlutterView setLogicalSize()', () {
+  group('TestFlutterView logicalSize', () {
     testWidgets('Width', (tester) async {
       final double physicalWidth = tester.view.physicalSize.width;
       final double physicalHeight = tester.view.physicalSize.height;
@@ -13,6 +13,7 @@ void main() {
       expect(tester.view.physicalSize.height != physicalHeight, true);
       expect(tester.view.physicalSize.width == logicalWidth, true);
       expect(tester.view.physicalSize.height == logicalHeight, true);
+      expect(tester.view.physicalSize == tester.view.getLogicalSize(), true);
     });
 
     testWidgets('Height', (tester) async {
@@ -25,6 +26,7 @@ void main() {
       expect(tester.view.physicalSize.height != physicalHeight, true);
       expect(tester.view.physicalSize.width == logicalWidth, true);
       expect(tester.view.physicalSize.height == logicalHeight, true);
+      expect(tester.view.physicalSize == tester.view.getLogicalSize(), true);
     });
 
     testWidgets('Both', (tester) async {
@@ -37,6 +39,7 @@ void main() {
       expect(tester.view.physicalSize.height != physicalHeight, true);
       expect(tester.view.physicalSize.width == logicalWidth, true);
       expect(tester.view.physicalSize.height == logicalHeight, true);
+      expect(tester.view.physicalSize == tester.view.getLogicalSize(), true);
     });
   });
 }

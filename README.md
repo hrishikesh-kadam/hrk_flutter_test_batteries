@@ -18,6 +18,7 @@ A library to accumulate required flutter test helper and utility codes
 
 - [`TestFlutterView` Extension][]
   - `tester.view.setLogicalSize()`
+  - `tester.view.getLogicalSize()`
 
 ## Getting started
 

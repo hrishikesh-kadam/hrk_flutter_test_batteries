@@ -1,3 +1,7 @@
+## 0.7.0
+
+- Add getPhysicalSize() extension on TestFlutterView
+
 ## 0.6.1
 
 - Rename overflowing to overflow
