@@ -36,7 +36,7 @@ jobs:
       - uses: hrishikesh-kadam/setup-flutter@v1
         with:
           ref: ${{ inputs.ref }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: ./tool/prerequisite.sh
       - run: ./tool/ci.sh
       - uses: codecov/codecov-action@v3
