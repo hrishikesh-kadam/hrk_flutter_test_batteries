@@ -1,3 +1,7 @@
+## 0.7.1
+
+- Refactor links in README.md
+
 ## 0.7.0
 
 - Add getPhysicalSize() extension on TestFlutterView

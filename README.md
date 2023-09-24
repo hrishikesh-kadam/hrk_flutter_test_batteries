@@ -1,24 +1,24 @@
-[![ci](https://github.com/hrishikesh-kadam/hrk_flutter_test_batteries/actions/workflows/ci.yaml/badge.svg)](https://github.com/hrishikesh-kadam/hrk_flutter_test_batteries/actions/workflows/ci.yaml)
-[![codecov](https://codecov.io/gh/hrishikesh-kadam/hrk_flutter_test_batteries/branch/main/graph/badge.svg)](https://codecov.io/gh/hrishikesh-kadam/hrk_flutter_test_batteries)
-[![pub package](https://img.shields.io/pub/v/hrk_flutter_test_batteries.svg)](https://pub.dev/packages/hrk_flutter_test_batteries)
+[![ci][ci-badge]][ci-link]
+[![pub package link][pub-badge]][pub-link]
+[![codecov link][codecov-badge]][codecov-link]
 
 A library to accumulate required flutter test helper and utility codes
 
 ## Features
 
-- [`getTestType()`][]
-- [`simulateAndroidBackButton(tester)`][]
-- [`verifySystemNavigatorPop(tester)`][]
-- [`disableOverflowError()`][]
-- [`WidgetTester` Extenion][]
-  - `tester.getOverflowRenderFlexList()`
-  - `tester.expectNoOverflow()`
+- [`getTestType()`]
+- [`simulateAndroidBackButton()`]
+- [`verifySystemNavigatorPop()`]
+- [`disableOverflowError()`]
+- [`HrkWidgetTester`]
+  - [`getOverflowRenderFlexList()`]
+  - [`expectNoOverflow()`]
 
 ## Convenient Helpers
 
-- [`TestFlutterView` Extension][]
-  - `tester.view.setLogicalSize()`
-  - `tester.view.getLogicalSize()`
+- [`HrkTestFlutterView`]
+  - [`view.setLogicalSize()`]
+  - [`view.getLogicalSize()`]
 
 ## Getting started
 
@@ -83,9 +83,19 @@ void main() {
 ```
 
 
-[`getTestType()`]: lib/src/test_type.dart
-[`simulateAndroidBackButton(tester)`]: lib/src/navigation/simulate_android_back_button.dart
-[`verifySystemNavigatorPop(tester)`]: lib/src/navigation/verify_system_navigator_pop.dart
-[`disableOverflowError()`]: lib/src/error/disable_overflow_error.dart
-[`WidgetTester` Extenion]: lib/src/extension/widget_tester.dart
-[`TestFlutterView` Extension]: lib/src/extension/test_flutter_view.dart
+[ci-badge]: https://github.com/hrishikesh-kadam/hrk_flutter_test_batteries/actions/workflows/ci.yaml/badge.svg
+[ci-link]: https://github.com/hrishikesh-kadam/hrk_flutter_test_batteries/actions/workflows/ci.yaml
+[pub-badge]: https://img.shields.io/pub/v/hrk_flutter_test_batteries.svg
+[pub-link]: https://pub.dev/packages/hrk_flutter_test_batteries
+[codecov-badge]: https://codecov.io/gh/hrishikesh-kadam/hrk_flutter_test_batteries/branch/main/graph/badge.svg
+[codecov-link]: https://codecov.io/gh/hrishikesh-kadam/hrk_flutter_test_batteries
+[`getTestType()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/getTestType.html
+[`simulateAndroidBackButton()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/simulateAndroidBackButton.html
+[`verifySystemNavigatorPop()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/verifySystemNavigatorPop.html
+[`disableOverflowError()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/disableOverflowError.html
+[`HrkWidgetTester`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkWidgetTester.html
+[`getOverflowRenderFlexList()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkWidgetTester/getOverflowRenderFlexList.html
+[`expectNoOverflow()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkWidgetTester/expectNoOverflow.html
+[`HrkTestFlutterView`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView.html
+[`view.setLogicalSize()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView/setLogicalSize.html
+[`view.getLogicalSize()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView/getLogicalSize.html
