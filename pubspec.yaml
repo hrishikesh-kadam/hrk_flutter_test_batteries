@@ -23,7 +23,7 @@ dependencies:
 
 dev_dependencies:
   hrk_analysis: '>=0.1.0 <1.0.0'
-  go_router: '>=10.0.0 <12.0.0'
+  go_router: ">=10.0.0 <13.0.0"
 
 flutter:
   uses-material-design: true
