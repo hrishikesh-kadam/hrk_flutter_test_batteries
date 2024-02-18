@@ -5,7 +5,8 @@ set -e -o pipefail
 dart pub global activate coverage
 
 flutter test --coverage
-lcov --list coverage/lcov.info
+lcov --list coverage/lcov.info \
+  | grep -v ".*|.*100%.*|.*|"
 
 pushd examples/counter &> /dev/null
 flutter pub get
