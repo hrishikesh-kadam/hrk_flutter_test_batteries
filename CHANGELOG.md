@@ -1,3 +1,7 @@
+## 0.8.0
+
+- Add `precacheAllImages()`
+
 ## 0.7.1
 
 - Refactor links in README.md

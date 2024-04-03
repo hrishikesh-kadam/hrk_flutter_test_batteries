@@ -13,6 +13,7 @@ A library to accumulate required flutter test helper and utility codes
 - [`HrkWidgetTester`]
   - [`getOverflowRenderFlexList()`]
   - [`expectNoOverflow()`]
+- [`precacheAllImages()`]
 
 ## Convenient Helpers
 
@@ -96,6 +97,7 @@ void main() {
 [`HrkWidgetTester`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkWidgetTester.html
 [`getOverflowRenderFlexList()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkWidgetTester/getOverflowRenderFlexList.html
 [`expectNoOverflow()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkWidgetTester/expectNoOverflow.html
+[`precacheAllImages()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/precacheAllImages.html
 [`HrkTestFlutterView`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView.html
 [`view.setLogicalSize()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView/setLogicalSize.html
 [`view.getLogicalSize()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView/getLogicalSize.html
