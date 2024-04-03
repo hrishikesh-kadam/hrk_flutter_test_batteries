@@ -36,3 +36,4 @@ jobs:
         with:
           files: coverage/lcov.info
           name: ci-${{ matrix.runner }}-${{ matrix.ref }}
+          token: ${{ secrets.CODECOV_TOKEN }}
