@@ -2,6 +2,8 @@
 
 set -e -o pipefail
 
+flutter create --template=package .
+
 flutter pub get
 
 dart format --output none --set-exit-if-changed .
