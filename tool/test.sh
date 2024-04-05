@@ -2,8 +2,6 @@
 
 set -e -o pipefail
 
-dart pub global activate coverage
-
 flutter test --coverage
 lcov --list coverage/lcov.info \
   | grep -v ".*|.*100%.*|.*|"
