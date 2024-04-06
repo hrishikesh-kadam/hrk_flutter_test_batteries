@@ -26,6 +26,8 @@ jobs:
         ref: [ stable, beta ]
 
     steps:
+      - run: brew install bash
+        if: runner.os == 'macOS'
       - uses: hrishikesh-kadam/setup-flutter@v1
         with:
           ref: ${{ matrix.ref }}

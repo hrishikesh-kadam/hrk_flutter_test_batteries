@@ -12,7 +12,6 @@ on:
           - 'ubuntu-latest'
           - 'macos-latest'
           - 'windows-latest'
-          - 'macos-13'
       ref:
         description: 'Flutter channel, version or git reference'
         required: true
@@ -33,6 +32,8 @@ jobs:
     runs-on: ${{ inputs.runner }}
 
     steps:
+      - run: brew install bash
+        if: runner.os == 'macOS'
       - uses: hrishikesh-kadam/setup-flutter@v1
         with:
           ref: ${{ inputs.ref }}

@@ -2,7 +2,20 @@
 
 set -e -o pipefail
 
-source ./tool/shell/logs-env-posix.sh
+echo "Checking Pre-requisite"
+
+if (( BASH_VERSINFO[0] < 5 )); then
+  if [[ $(uname -s) =~ ^"Darwin" ]]; then
+    brew install bash
+  else
+    echo "Please install Bash with version atleast 5"
+    exit 1
+  fi
+  bash --version
+fi
+
+# shellcheck disable=SC1090
+source <(curl -s https://raw.githubusercontent.com/hrishikesh-kadam/common-scripts/main/logs/logs-env-posix.sh)
 
 check_command_on_path() {
   if [[ ! -x $(command -v "$1") ]]; then
@@ -59,3 +72,5 @@ if [[ $(uname -s) =~ ^"Linux" ]]; then
   # https://docs.flutter.dev/get-started/install/linux#additional-linux-requirements
   sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
 fi
+
+print_in_green "Pre-requisite fulfilled"
