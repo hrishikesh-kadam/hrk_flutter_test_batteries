@@ -1,3 +1,7 @@
+## 1.0.1
+
+- Fix `useGoldenFileComparatorWithThreshold()` docs
+
 ## 1.0.0
 
 - Add `useGoldenFileComparatorWithThreshold()`

@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// Uses [LocalFileComparatorWithThreshold] as [goldenFileComparator]
+///
 /// [threshold] above which tests will be marked as failing.
 /// Ranges from 0 to 1, both inclusive.
 ///
@@ -22,7 +23,8 @@ void useGoldenFileComparatorWithThreshold(double threshold) {
 
 /// Works just like [LocalFileComparator] but includes a [threshold]
 class LocalFileComparatorWithThreshold extends LocalFileComparator {
-  /// Threshold above which tests will be marked as failing.
+  /// Threshold to compare with [ComparisonResult.diffPercent].
+  ///
   /// Ranges from 0 to 1, both inclusive.
   final double threshold;
 
@@ -31,7 +33,7 @@ class LocalFileComparatorWithThreshold extends LocalFileComparator {
     this.threshold,
   ) : assert(threshold >= 0 && threshold <= 1);
 
-  /// Same as of [LocalFileComparator.compare], but also checks if the
+  /// Same as [LocalFileComparator.compare], but also checks if the
   /// [ComparisonResult.diffPercent] is less than the [threshold].
   @override
   Future<bool> compare(Uint8List imageBytes, Uri golden) async {
