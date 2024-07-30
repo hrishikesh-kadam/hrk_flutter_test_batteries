@@ -1,3 +1,8 @@
+## 1.0.0
+
+- Add `useGoldenFileComparatorWithThreshold()`
+- Bump hrk_analysis to ^1.0.0
+
 ## 0.8.0
 
 - Add `precacheAllImages()`

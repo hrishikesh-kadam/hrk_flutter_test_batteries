@@ -4,7 +4,7 @@ set -e -o pipefail
 
 flutter create --template=package .
 
-flutter pub get
+flutter pub upgrade
 
 dart format --output none --set-exit-if-changed .
 
@@ -17,4 +17,4 @@ dart pub global run pana --no-warning
 
 dart pub publish --dry-run
 
-git status -s
+git diff --stat --exit-code

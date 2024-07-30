@@ -39,3 +39,6 @@ coverage/
 /macos/
 /windows/
 /web/
+
+test/golden/use_golden_file_comparator_with_threshold/failures/outside-threshold*
+test/error/failures/golden*

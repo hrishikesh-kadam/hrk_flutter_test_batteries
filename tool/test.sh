@@ -7,7 +7,7 @@ lcov --list coverage/lcov.info \
   | grep -v ".*|.*100%.*|.*|"
 
 pushd examples/counter &> /dev/null
-flutter pub get
+flutter pub upgrade
 if [[ $(uname -s) =~ ^"Linux" ]]; then
   OS_NAME="linux"
   if [[ $GITHUB_ACTIONS ]]; then

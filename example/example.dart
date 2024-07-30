@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hrk_flutter_test_batteries/hrk_flutter_test_batteries.dart';
 
@@ -47,5 +47,25 @@ void main() {
     // addTearDown(() => tester.view.resetPhysicalSize());
     // addTearDown(() => tester.view.resetDevicePixelRatio());
     tester.view.setLogicalSize(width: 280, height: 653);
+  });
+
+  testWidgets('useGoldenFileComparatorWithThreshold()', (tester) async {
+    const double viewWidth = 100;
+    const double viewHeight = 100;
+    tester.view.setLogicalSize(width: viewWidth, height: viewHeight);
+    await tester.pumpWidget(
+      const SizedBox(
+        width: viewWidth,
+        height: viewHeight,
+        child: ColoredBox(
+          color: Colors.blue,
+        ),
+      ),
+    );
+    useGoldenFileComparatorWithThreshold(0.50); // 50.00%
+    await expectLater(
+      find.byType(ColoredBox),
+      matchesGoldenFile('within-threshold.png'),
+    );
   });
 }

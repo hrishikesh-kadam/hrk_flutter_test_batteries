@@ -14,6 +14,7 @@ A library to accumulate required flutter test helper and utility codes
   - [`getOverflowRenderFlexList()`]
   - [`expectNoOverflow()`]
 - [`precacheAllImages()`]
+- [`useGoldenFileComparatorWithThreshold()`]
 
 ## Convenient Helpers
 
@@ -80,6 +81,26 @@ void main() {
     // addTearDown(() => tester.view.resetDevicePixelRatio());
     tester.view.setLogicalSize(width: 280, height: 653);
   });
+
+  testWidgets('useGoldenFileComparatorWithThreshold()', (tester) async {
+    const double viewWidth = 100;
+    const double viewHeight = 100;
+    tester.view.setLogicalSize(width: viewWidth, height: viewHeight);
+    await tester.pumpWidget(
+      const SizedBox(
+        width: viewWidth,
+        height: viewHeight,
+        child: ColoredBox(
+          color: Colors.blue,
+        ),
+      ),
+    );
+    useGoldenFileComparatorWithThreshold(0.50); // 50.00%
+    await expectLater(
+      find.byType(ColoredBox),
+      matchesGoldenFile('within-threshold.png'),
+    );
+  });
 }
 ```
 
@@ -98,6 +119,7 @@ void main() {
 [`getOverflowRenderFlexList()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkWidgetTester/getOverflowRenderFlexList.html
 [`expectNoOverflow()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkWidgetTester/expectNoOverflow.html
 [`precacheAllImages()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/precacheAllImages.html
+[`useGoldenFileComparatorWithThreshold()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/useGoldenFileComparatorWithThreshold.html
 [`HrkTestFlutterView`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView.html
 [`view.setLogicalSize()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView/setLogicalSize.html
 [`view.getLogicalSize()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView/getLogicalSize.html
