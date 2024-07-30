@@ -1,3 +1,7 @@
+## 1.0.2
+
+- Fix `useGoldenFileComparatorWithThreshold()` for web integration tests
+
 ## 1.0.1
 
 - Fix `useGoldenFileComparatorWithThreshold()` docs
