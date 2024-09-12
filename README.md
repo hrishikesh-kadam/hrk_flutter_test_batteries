@@ -15,12 +15,15 @@ A library to accumulate required flutter test helper and utility codes
   - [`expectNoOverflow()`]
 - [`precacheAllImages()`]
 - [`useGoldenFileComparatorWithThreshold()`]
-
-## Convenient Helpers
-
+- [`HrkFinders`]
+  - [`byKeyContains()`]
+  - [`byKeyStartsWith()`]
+  - [`byKeyEndsWith()`]
+  - [`descendantText()`]
+  - [`descendantTextContaining()`]
 - [`HrkTestFlutterView`]
-  - [`view.setLogicalSize()`]
-  - [`view.getLogicalSize()`]
+  - [`setLogicalSize()`]
+  - [`getLogicalSize()`]
 
 ## Getting started
 
@@ -120,6 +123,12 @@ void main() {
 [`expectNoOverflow()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkWidgetTester/expectNoOverflow.html
 [`precacheAllImages()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/precacheAllImages.html
 [`useGoldenFileComparatorWithThreshold()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/useGoldenFileComparatorWithThreshold.html
+[`HrkFinders`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkFinders.html
+[`byKeyContains()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkFinders/byKeyContains.html
+[`byKeyStartsWith()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkFinders/byKeyStartsWith.html
+[`byKeyEndsWith()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkFinders/byKeyEndsWith.html
+[`descendantText()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkFinders/descendantText.html
+[`descendantTextContaining()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkFinders/descendantTextContaining.html
 [`HrkTestFlutterView`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView.html
-[`view.setLogicalSize()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView/setLogicalSize.html
-[`view.getLogicalSize()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView/getLogicalSize.html
+[`setLogicalSize()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView/setLogicalSize.html
+[`getLogicalSize()`]: https://pub.dev/documentation/hrk_flutter_test_batteries/latest/hrk_flutter_test_batteries/HrkTestFlutterView/getLogicalSize.html

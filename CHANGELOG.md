@@ -1,3 +1,7 @@
+## 1.1.0
+
+- Add `HrkFinders`
+
 ## 1.0.2
 
 - Fix `useGoldenFileComparatorWithThreshold()` for web integration tests
